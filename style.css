@@ -1,0 +1,104 @@
+*{
+    font-family: "Raleway", sans-serif;
+}
+
+h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+}
+
+:root {
+    --black: rgb(26,26,26);
+    --white: rgb(250,250,250);
+    --gold: rgb(210, 174, 15);
+}
+
+.logo {
+    fill: var(--black);
+}
+
+.logo-custom {
+    fill: var(--gold);
+}
+
+.nav-link {
+    color: gray;
+}
+.nav-link:hover {
+    color: var(--gold);
+}
+
+.bg-custom {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.nav-scroll {
+    color: var(--white);
+    background-color: var(--black);
+    transition: all 500ms;
+}
+
+/* sezione cover */
+
+header {
+    height: 100vh;
+    background: linear-gradient(rgb(250,250,250), rgba(250,250,250,0.0)), url(./media/cover.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: 60px;
+}
+
+.btn-custom {
+    border: 1px solid var(--gold);
+    border-radius: 0px;
+    height: 40px;
+    width: 100px;
+    color: var(--black);
+    position: relative;
+    z-index: 1;
+    transition: all 400ms;
+    overflow: hidden;
+}
+
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--gold);
+    transition: all 400ms;
+}
+
+.btn-custom:hover {
+    color: var(--white);
+}
+
+.btn-custom:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* sezione storia del sito */
+
+.img-storia {
+    height: 500px;
+    width: auto;
+}
+
+/* sezione con i numeri che cambiano */
+
+.sezione-conteggio {
+    margin-top: 40px;
+    padding: 40px;
+    background-color: var(--white);
+}
+
+.font-bold {
+    font-weight: 800;
+    font-size: 50px;
+    color: var(--gold);
+}
