@@ -7,6 +7,10 @@ h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
     font-weight: 600;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 :root {
     --black: rgb(26,26,26);
     --white: rgb(250,250,250);
@@ -19,6 +23,14 @@ h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
 
 .logo-custom {
     fill: var(--gold);
+}
+
+.hamburger,
+.hamburger:active,
+.hamburger:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 .nav-link {
@@ -82,10 +94,14 @@ header {
     height: 100%;
 }
 
+.logo-cover {
+    width: 100%;
+}
+
 /* sezione storia del sito */
 
 .img-storia {
-    height: 500px;
+    height: 100%;
     width: auto;
 }
 
@@ -101,4 +117,48 @@ header {
     font-weight: 800;
     font-size: 50px;
     color: var(--gold);
+}
+
+/* sezione swiper js */
+
+.swiper {
+    width: 100%;
+    height: 400px;
+    background: #000;
+    position: relative;
+}
+
+.swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+}
+
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,0.4)), url(./media/img-reviews.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+}
+
+.swiper-slide .subtitle {
+    font-size: 21px;
+}
+
+.swiper-slide .text {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
 }
