@@ -101,7 +101,7 @@ header {
 /* sezione storia del sito */
 
 .img-storia {
-    height: 100%;
+    height: auto;
     width: auto;
 }
 
@@ -161,4 +161,11 @@ header {
     font-size: 14px;
     max-width: 400px;
     line-height: 1.3;
+}
+
+
+/* css annunci */
+
+.titleAnnunci {
+    margin-top: 100px;
 }

@@ -116,11 +116,13 @@ function generateCard() {
 generateCard();
 
 btnRewview.addEventListener('click', () => {
+    swiperWrapper.innerHTML= '';
     reviews.push({nome : userName.value, title : userTitle.value, description : userDescription.value});
     generateCard();
     userName.value = '';
     userTitle.value = '';
     userDescription.value = '';
+    swiper.update();
 });
 
 
