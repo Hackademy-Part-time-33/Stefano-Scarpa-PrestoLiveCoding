@@ -14,7 +14,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- cdn swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
+  
   <!-- link css -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,6 +31,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Shop</a>
           </li>
@@ -55,127 +58,112 @@
       </div>
     </div>
   </nav>
-
+  
   <!-- titolo -->
   <div class="container">
     <div class="row">
-        <div class="col-12 text-center titleAnnunci">
-            <h1>I NOSTRI PRODOTTI</h1>
-        </div>
+      <div class="col-12 text-center titleAnnunci">
+        <h1>I NOSTRI PRODOTTI</h1>
+      </div>
     </div>
   </div>
-
+  
   <!-- facciamo le due sezioni: nella prima sezione mettiamo i nostri filtri, nella seconda mettiamo i nostri prodotti -->
   <div class="container mt-5">
     <div class="row">
       <!-- sezione con i filtri -->
-        <div class="col-12 col-md-3 my-3">
-            <div class="mb-3"><i class="fa-solid fa-filter"></i> Imposta un filtro</div>
-            <div class="accordion accordion-flush border" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      Accordion Item #1
-                    </button>
-                  </h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                  </div>
+      <div class="col-12 col-md-3 my-3">
+        <div class="mb-3"><i class="fa-solid fa-filter"></i> Imposta un filtro</div>
+        <!-- primo accordion -->
+        <div class="accordion accordion-flush border" id="accordionFlushExample">
+          <div class="accordion-item">
+            <!-- titolo accordion -->
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                CATEGORIE
+              </button>
+            </h2>
+            <!-- filtro accordion per categorie -->
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div id="categoryWrapper" class="accordion-body">
+                
+                <!-- form check radio -->
+                
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="category" id="all" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Tutte le categorie
+                  </label>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      Accordion Item #2
-                    </button>
-                  </h2>
-                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                      Accordion Item #3
-                    </button>
-                  </h2>
-                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                  </div>
-                </div>
+                <!-- fine form check -->
+                
               </div>
-        </div>
-        <!-- sezione con le card degli articoli -->
-        <div class="col-12 col-md-9">
-
-          <!-- griglia card articoli -->
-          <div class="row row-cols-1 row-cols-md-3 g-3">
-
-            <div class="col">
-
-              <div class="card rounded-0 p-0 mx-auto" style="width: 300px;">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/340aeb9ac43847fea000a8da0182b561_9366/Scarpe_Gazelle_Bordeaux_B41645_01_standard.jpg" class="card-img-top" alt="articolo 1">
-                <div class="card-body">
-                  <h5 class="card-title">Gazelle</h5>
-                  <p class="card-text">Scarpe</p>
-                  <p class="card-text">110</p>
-                  <a href="#" class="btn btn-custom">Aggiungi</a>
-                </div>
-              </div>
-
             </div>
-            <div class="col">
-
-              <div class="card rounded-0 p-0 mx-auto" style="width: 300px;">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/701aeaab5d4f4ed382da2cb14562d9af_9366/Scarpe_Stan_Smith_Bianco_ID0268_01_standard.jpg" class="card-img-top" alt="articolo 1">
-                <div class="card-body">
-                  <h5 class="card-title">Stan Smith</h5>
-                  <p class="card-text">Scarpe</p>
-                  <p class="card-text">99</p>
-                  <a href="#" class="btn btn-custom">Aggiungi</a>
-                </div>
-              </div>
-
+          </div>
+          
+          <!-- secondo accordion -->
+          <div class="accordion-item">
+            <!-- secondo accordion -->
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <!-- contenuto secondo filtro -->
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
             </div>
-            <div class="col">
-
-              <div class="card rounded-0 p-0 mx-auto" style="width: 300px;">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/6268a07e6f884995b9dc9145d88380b0_9366/Scarpe_Samba_OG_Marrone_IG6174_01_standard.jpg" class="card-img-top" alt="articolo 1">
-                <div class="card-body">
-                  <h5 class="card-title">Samba 0G</h5>
-                  <p class="card-text">Scarpe</p>
-                  <p class="card-text">120.50</p>
-                  <a href="#" class="btn btn-custom">Aggiungi</a>
-                </div>
-              </div>
-
+          </div>
+          
+          <!-- terzo accordion -->
+          <div class="accordion-item">
+            <!-- titolo terzo accordion -->
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #3
+              </button>
+            </h2>
+            <!-- contenuto terzo filtro -->
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
             </div>
-            <div class="col">
-
-              <div class="card rounded-0 p-0 mx-auto" style="width: 300px;">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2b3ca00e0e34665a911af8800a7ddba_9366/Scarpe_Campus_00s_Giallo_H03473_01_standard.jpg" class="card-img-top" alt="articolo 1">
-                <div class="card-body">
-                  <h5 class="card-title">Campus 00s</h5>
-                  <p class="card-text">Scarpe</p>
-                  <p class="card-text">89</p>
-                  <a href="#" class="btn btn-custom">Aggiungi</a>
-                </div>
-              </div>
-
-            </div>
-           
           </div>
         </div>
+      </div>
+      <!-- sezione con le card degli articoli -->
+      <div class="col-12 col-md-9">
+        
+        <!-- griglia card articoli -->
+        
+        <div id="cardWrapper" class="d-flex flex-wrap justify-content-evenly">
+          
+          <!-- card con gli annunci -->
+          
+          
+        </div>
+        
+      </div>
     </div>
   </div>
-
-  <div style="height: 1000px;"></div>
+  
+  <!-- sezione del footer -->
+  <footer class="container-fluid py-3 mt-4 bg-footer d-flex flex-column justify-content-center">
+    <ul class="nav justify-content-center border-bottom pb-3 my-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="annunci.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Donna</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Uomo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Bambino</a></li>
+    </ul>
+    <p class="text-center">© 2024 Stefano Scarpa, Presto.it</p>
+  </footer>
   
   
   <!-- js font awsemone -->
   <script src="https://kit.fontawesome.com/a3187457e5.js" crossorigin="anonymous"></script>
   <!-- script bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+  
   
   <!-- script -->
   <script src="annunci.js"></script>

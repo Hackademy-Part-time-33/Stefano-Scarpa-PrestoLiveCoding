@@ -151,16 +151,28 @@ header {
 .swiper-slide .title {
     font-size: 41px;
     font-weight: 300;
+    color: var(--black);
 }
 
 .swiper-slide .subtitle {
     font-size: 21px;
+    color: var(--black);
 }
 
 .swiper-slide .text {
     font-size: 14px;
     max-width: 400px;
     line-height: 1.3;
+    color: var(--black);
+}
+
+/* sezione del footer */
+
+.bg-footer {
+    height: 400px;
+    background-color: #000;
+    color: #fff;
+    padding-top: 40px;
 }
 
 
@@ -169,3 +181,4 @@ header {
 .titleAnnunci {
     margin-top: 100px;
 }
+
