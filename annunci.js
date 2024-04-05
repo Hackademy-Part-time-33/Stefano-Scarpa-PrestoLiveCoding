@@ -1,3 +1,42 @@
+// dark mode
+
+let btnDarkMode = document.querySelector('#btnDarkMode');
+
+let isClicked = true;
+
+btnDarkMode.addEventListener('click', ()=> {
+    if (isClicked) {
+        document.documentElement.style.setProperty('--white', 'rgb(26,26,26)');
+        document.documentElement.style.setProperty('--black', 'rgb(250,250,250)');
+        btnDarkMode.innerHTML = `<span class="material-symbols-outlined">light_mode</span>`;
+        isClicked = false;
+        localStorage.setItem('mode', 'light');
+    } else {
+        document.documentElement.style.setProperty('--white', 'rgb(250,250,250)');
+        document.documentElement.style.setProperty('--black', 'rgb(26,26,26)');
+        btnDarkMode.innerHTML = `<span class="material-symbols-outlined">dark_mode</span>`;
+        isClicked = true;
+        localStorage.setItem('mode', 'dark');
+    }
+});
+
+let mode = localStorage.getItem('mode');
+
+if (mode === 'dark') {
+    document.documentElement.style.setProperty('--white', 'rgb(26,26,26)');
+    document.documentElement.style.setProperty('--black', 'rgb(250,250,250)');
+    btnDarkMode.innerHTML = `<span class="material-symbols-outlined">light_mode</span>`;
+    isClicked = false;
+} else {
+    document.documentElement.style.setProperty('--white', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--black', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<span class="material-symbols-outlined">dark_mode</span>`;
+    isClicked = true;
+};
+
+// end dark mode
+
+
 let myNavbar = document.querySelector('#myNavbar');
 let logoCustom = document.querySelector('#logo-custom');
 let links = document.querySelectorAll('.nav-link');
@@ -78,7 +117,7 @@ fetch('./annunci.json').then((response) => response.json()).then((data)=>{
     let cardWrapper = document.querySelector('#cardWrapper');
 
     function showCards(card) {
-        card.sort((a,b) => a.price - b.price);
+        card.sort((a,b) => b.price - a.price);
         cardWrapper.innerHTML = '';
 
         card.forEach((annuncio) => {
@@ -87,10 +126,10 @@ fetch('./annunci.json').then((response) => response.json()).then((data)=>{
             div.style.width = '300px';
             div.innerHTML = `
             <img src="${annuncio.image}" class="card-img-top" alt="articolo 1">
-            <div class="card-body">
+            <div class="card-body card-custom">
               <h5 class="card-title">${annuncio.name}</h5>
               <p class="card-text">${annuncio.category}</p>
-              <p class="card-text">${annuncio.price}</p>
+              <p class="card-text">${annuncio.price}€</p>
               <a href="#" class="btn btn-custom">Aggiungi</a>
             </div>
             `;
@@ -125,6 +164,44 @@ fetch('./annunci.json').then((response) => response.json()).then((data)=>{
             filterByCategory();
         });
     });
+
+
+    // impostiamo il filtro per prezzo
+
+    let inputRange = document.querySelector('#inputRange');
+    let textPrice = document.querySelector('#textPrice');
+
+    function setPriceInput() {
+        let maxPrice = data[0].price;
+        inputRange.max = maxPrice;
+        inputRange.value = maxPrice;
+        textPrice.innerHTML = maxPrice;
+    }
+    setPriceInput();
+
+    inputRange.addEventListener('input', ()=> {
+        textPrice.innerHTML = inputRange.value;
+        filterByPrice();
+    });
+
+    function filterByPrice() {
+        let filtered = data.filter((annuncio) => +annuncio.price <= +inputRange.value);
+        showCards(filtered);
+    };
+
+    // impostiamo il filtro per parola
+
+    let inputWord = document.querySelector('#inputWord');
+
+    inputWord.addEventListener('input', () => {
+        filterByWord();
+    });
+
+    function filterByWord() {
+      let filtered = data.filter((annuncio) => annuncio.name.toLowerCase().includes(inputWord.value.toLowerCase()));
+      showCards(filtered);  
+    };
+
 
 
 

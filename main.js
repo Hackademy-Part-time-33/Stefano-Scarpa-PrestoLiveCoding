@@ -1,3 +1,41 @@
+// dark mode
+
+let btnDarkMode = document.querySelector('#btnDarkMode');
+
+let isClicked = true;
+
+btnDarkMode.addEventListener('click', ()=> {
+    if (isClicked) {
+        document.documentElement.style.setProperty('--white', 'rgb(26,26,26)');
+        document.documentElement.style.setProperty('--black', 'rgb(250,250,250)');
+        btnDarkMode.innerHTML = `<span class="material-symbols-outlined me-2">light_mode</span> Light`;
+        isClicked = false;
+        localStorage.setItem('mode', 'light');
+    } else {
+        document.documentElement.style.setProperty('--white', 'rgb(250,250,250)');
+        document.documentElement.style.setProperty('--black', 'rgb(26,26,26)');
+        btnDarkMode.innerHTML = `<span class="material-symbols-outlined me-2">dark_mode</span> Dark`;
+        isClicked = true;
+        localStorage.setItem('mode', 'dark');
+    }
+});
+
+let mode = localStorage.getItem('mode');
+
+if (mode === 'dark') {
+    document.documentElement.style.setProperty('--white', 'rgb(26,26,26)');
+    document.documentElement.style.setProperty('--black', 'rgb(250,250,250)');
+    btnDarkMode.innerHTML = `<span class="material-symbols-outlined me-2">light_mode</span> Light`;
+    isClicked = false;
+} else {
+    document.documentElement.style.setProperty('--white', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--black', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<span class="material-symbols-outlined me-2">dark_mode</span> Dark`;
+    isClicked = true;
+};
+
+// end dark mode
+
 
 let myNavbar = document.querySelector('#myNavbar');
 let logoCustom = document.querySelector('#logo-custom');

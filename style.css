@@ -11,7 +11,27 @@ html, body {
     overflow-x: hidden;
 }
 
+/* dark mode */
+
+.light-mode {
+    background-color: var(--white);
+    color: var(--black);
+    transition: all 0.5s ease-in-out;
+}
+
+.btn_dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* end dark mode */
+
 :root {
+    /* --light: rgb(250,250,250);
+    --dark: rgb(26,26,26); */
+
     --black: rgb(26,26,26);
     --white: rgb(250,250,250);
     --gold: rgb(210, 174, 15);
@@ -34,7 +54,7 @@ html, body {
 }
 
 .nav-link {
-    color: gray;
+    color: var(--black);
 }
 .nav-link:hover {
     color: var(--gold);
@@ -45,17 +65,19 @@ html, body {
     color: var(--black);
 }
 
+
 .nav-scroll {
     color: var(--white);
     background-color: var(--black);
     transition: all 500ms;
 }
 
+
 /* sezione cover */
 
 header {
     height: 100vh;
-    background: linear-gradient(rgb(250,250,250), rgba(250,250,250,0.0)), url(./media/cover.jpg);
+    background: linear-gradient(var(--white), rgba(250,250,250,0.0)), url(./media/cover.jpg);
     background-size: cover;
     background-position: center;
     margin-top: 60px;
@@ -66,7 +88,7 @@ header {
     border-radius: 0px;
     height: 40px;
     width: 100px;
-    color: var(--black);
+    color: var(--dark);
     position: relative;
     z-index: 1;
     transition: all 400ms;
@@ -170,11 +192,15 @@ header {
 
 .bg-footer {
     height: 400px;
-    background-color: #000;
-    color: #fff;
+    background-color: rgb(0, 0, 0);
+    color: rgb(250, 250, 250);
     padding-top: 40px;
 }
-
+.foot-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+}
 
 /* css annunci */
 
@@ -182,3 +208,63 @@ header {
     margin-top: 100px;
 }
 
+.card:hover {
+    border: 1px solid var(--black);
+}
+
+.card-custom {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+/* personalizzazione filtri */
+
+.accordion-custom {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.accordion-button::after {
+    color: var(--white);
+}
+
+.accordion-custom:focus,
+.accordion-custom:active {
+    outline: none;
+    box-shadow: none;
+    background-color: var(--white);
+}
+
+input[type='range'] {
+    background-color: var(--gold);
+    height: 2px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid var(--black);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+input[type='range']::-moz-range-track {
+    background-color: var(--gold);
+    height: 2px;
+}
+input[type='range']::-moz-range-thumb {
+    border: 1px solid var(--black);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.word-custom {
+    border-radius: 0px;
+    border: 1px solid var(--black);
+}
+
+.word-custom:active, .word-custom:focus {
+    box-shadow: none;
+    outline: none;
+}

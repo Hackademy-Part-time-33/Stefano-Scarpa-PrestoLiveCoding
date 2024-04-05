@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- cdn google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- cdn aos -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- cdn swiper -->
@@ -18,7 +20,7 @@
   <!-- link css -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-mode">
   <!-- navbar -->
   <nav id="myNavbar" class="navbar navbar-expand-lg bg-custom fixed-top">
     <div class="container-fluid">
@@ -48,6 +50,10 @@
           </li>
         </ul>
         <ul class="navbar-nav">
+          <!-- button dark mode -->
+          <li class="nav-item">
+            <button id="btnDarkMode" class="btn nav-link"><span class="material-symbols-outlined">dark_mode</span></button>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa-regular fa-user"></i></a>
           </li>
@@ -74,12 +80,13 @@
       <!-- sezione con i filtri -->
       <div class="col-12 col-md-3 my-3">
         <div class="mb-3"><i class="fa-solid fa-filter"></i> Imposta un filtro</div>
-        <!-- primo accordion -->
         <div class="accordion accordion-flush border" id="accordionFlushExample">
-          <div class="accordion-item">
+
+          <!-- primo accordion -->
+          <div class="accordion-item accordion-custom">
             <!-- titolo accordion -->
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <button class="accordion-button collapsed accordion-custom" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                 CATEGORIE
               </button>
             </h2>
@@ -91,7 +98,7 @@
                 
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="category" id="all" checked>
-                  <label class="form-check-label" for="flexRadioDefault2">
+                  <label class="form-check-label" for="all">
                     Tutte le categorie
                   </label>
                 </div>
@@ -102,30 +109,41 @@
           </div>
           
           <!-- secondo accordion -->
-          <div class="accordion-item">
+          <div class="accordion-item accordion-custom">
             <!-- secondo accordion -->
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Accordion Item #2
+              <button class="accordion-button collapsed accordion-custom" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                PREZZO
               </button>
             </h2>
             <!-- contenuto secondo filtro -->
             <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+              <div class="accordion-body">
+
+                <p>Inposta un range di prezzo</p>
+                <input id="inputRange" class="w-100 range-custom" type="range">
+                <p id="textPrice"></p>
+
+              </div>
             </div>
           </div>
           
           <!-- terzo accordion -->
-          <div class="accordion-item">
+          <div class="accordion-item accordion-custom">
             <!-- titolo terzo accordion -->
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Accordion Item #3
+              <button class="accordion-button collapsed accordion-custom" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                PAROLA
               </button>
             </h2>
             <!-- contenuto terzo filtro -->
             <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+              <div class="accordion-body">
+
+                <p>Digita quello che cerci</p>
+                <input id="inputWord" class="form-control word-custom" type="text">
+
+              </div>
             </div>
           </div>
         </div>
@@ -149,11 +167,11 @@
   <!-- sezione del footer -->
   <footer class="container-fluid py-3 mt-4 bg-footer d-flex flex-column justify-content-center">
     <ul class="nav justify-content-center border-bottom pb-3 my-3">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="annunci.html">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Donna</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Uomo</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Bambino</a></li>
+        <li class="nav-item"><a class="foot-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="foot-link" href="annunci.html">Shop</a></li>
+        <li class="nav-item"><a class="foot-link" href="#">Donna</a></li>
+        <li class="nav-item"><a class="foot-link" href="#">Uomo</a></li>
+        <li class="nav-item"><a class="foot-link" href="#">Bambino</a></li>
     </ul>
     <p class="text-center">© 2024 Stefano Scarpa, Presto.it</p>
   </footer>
